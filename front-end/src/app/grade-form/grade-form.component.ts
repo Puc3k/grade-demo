@@ -59,7 +59,6 @@ export class GradeFormComponent implements OnInit {
       this.gradeId = this.data.id;
       this.value = this.data.value ?? 0;
       this.subjectId = this.data.subjectId ?? 0;
-      console.log(this.data)
     } else {
       this.isEditing = false;
       this.gradeId = null;
@@ -91,13 +90,11 @@ export class GradeFormComponent implements OnInit {
 
     if (this.isEditing && this.gradeId) {
       this.gradeService.updateGrade(this.gradeId, grade).subscribe(response => {
-        console.log('Zaktualizowano ocenę', response);
         this.dialogRef.close(response);
       });
     } else {
       // If adding, call the add service
       this.gradeService.addGrade(grade).subscribe(response => {
-        console.log('Dodano nową ocenę', response);
         this.dialogRef.close(response);
       });
     }
