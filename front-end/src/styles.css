@@ -1,0 +1,18 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  background-color: #ededed;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}

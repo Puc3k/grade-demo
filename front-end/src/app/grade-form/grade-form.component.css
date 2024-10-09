@@ -1,0 +1,10 @@
+.add-grade-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 600px;
+}

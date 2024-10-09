@@ -1,0 +1,24 @@
+<mat-card class="grades-table-container">
+  <table mat-table [dataSource]="grades">
+    <ng-container matColumnDef="subjectName">
+      <th mat-header-cell *matHeaderCellDef> Przedmiot </th>
+      <td mat-cell *matCellDef="let grade"> {{grade.subjectName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef> Wartość </th>
+      <td mat-cell *matCellDef="let grade"> {{grade.value}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Akcje </th>
+      <td mat-cell *matCellDef="let grade">
+        <button *ngIf="canEditOrDelete()" mat-raised-button  color="primary" (click)="openGradeDialog(grade)" style="margin-right: 1rem;">Edytuj</button>
+        <button *ngIf="canEditOrDelete()" mat-raised-button  color="primary" (click)="deleteGrade(grade.id)">Usuń</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>

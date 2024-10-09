@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <span>Dziennik ocen</span>
+  <span class="spacer"></span>
+  <button *ngIf="canAddGrade()" mat-button (click)="goToAddGrade()">Dodaj Ocenę</button>
+  <button *ngIf="!isLoggedIn()" mat-button (click)="goToLogin()">Logowanie</button>
+  <button *ngIf="isLoggedIn()" mat-button (click)="logout()">Wyloguj</button>
+</mat-toolbar>
+<router-outlet></router-outlet>

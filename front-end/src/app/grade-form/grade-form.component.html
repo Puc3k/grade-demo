@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    <mat-card-title>{{ isEditing ? 'Edytuj Ocenę' : 'Dodaj Ocenę' }}</mat-card-title>
+  </mat-toolbar >
+  <mat-card-content style="margin-top: 1rem;">
+    <mat-form-field appearance="fill">
+      <mat-label>Wybierz przedmiot</mat-label>
+      <mat-select [(ngModel)]="subjectId" required>
+        <mat-option *ngFor="let subject of subjects" [value]="subject.id">
+          {{ subject.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Ocena</mat-label>
+      <input matInput [(ngModel)]="value" type="number" required/>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-content>
+    <button mat-raised-button color="primary" (click)="saveGrade()">
+      {{ isEditing ? 'Zaktualizuj' : 'Dodaj' }}
+    </button>
+  </mat-card-content>
+</mat-card>
